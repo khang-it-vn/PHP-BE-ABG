@@ -11,17 +11,15 @@
 
 			$paramUtil = new ParamUtil();
 			$controller_action = $paramUtil ->GetControllerAction();
-			
-
-			if ($_SERVER['REQUEST_URI'] === '/' || strlen($controller_action) == 1) 
+			if ($_SERVER['REQUEST_URI'] === '/PHP-BE-ABG/' || strlen($controller_action) == 1) 
             {
-                header('Location: '.ROOT_URL.'account/index');
+                header('Location: '.ROOT_URL.'user/index');
                 exit;
             }
 
 			if($this -> request['controller'] == "")
 			{
-				$this->request['controller'] = 'account';
+				$this->request['controller'] = 'user';
 			}
 
 			$this -> controller = strtolower($this -> request ['controller']);
