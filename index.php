@@ -1,7 +1,8 @@
+
 <?php
 
 	session_start();
-	
+	require('config.php');
 	//	
 	require('base/RequestFilter.php');
 	require('base/Controller.php');
@@ -9,6 +10,7 @@
 
 	// import controller
 	require('controllers/Account.php');
+	require('controllers/User.php');
 
 
 	//import util
