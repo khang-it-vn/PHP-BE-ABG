@@ -832,6 +832,7 @@ ul.email li i {
 
 .footer {
      padding-top: 90px
+     
 }
 
 .logo_bottom {
@@ -841,6 +842,7 @@ ul.email li i {
      line-height: 55px;
      margin-bottom: 40px;
      display: block;
+     padding-left: 50px;
 }
 
 .Informa h3 {
