@@ -12,7 +12,7 @@
 	require('controllers/Account.php');
 	require('controllers/User.php');
 	require('controllers/Store.php');
-
+	require('controllers/Admin.php');
 
 	//import util
 	require('utils/ParamUtil.php');
