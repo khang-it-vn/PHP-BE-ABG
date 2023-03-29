@@ -11,6 +11,7 @@
 	// import controller
 	require('controllers/Account.php');
 	require('controllers/User.php');
+	require('controllers/Store.php');
 
 
 	//import util

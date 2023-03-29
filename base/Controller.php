@@ -36,7 +36,7 @@
 		protected function returnViewWithLayout($viewModel,$layout)
 		{
 			$view = 'views/'.get_class($this).'/'.$this->action .'.php';
-			require('views/layout/'.$layout);
+			require('views/'.$layout);
 		}
 
 		
