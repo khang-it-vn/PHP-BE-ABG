@@ -7,5 +7,10 @@
 		{
 			return $this -> returnViewWithLayout(null,'store.php'); // Tham số đầu tiên là giá trị truyền lên view, tham số thứ hai là có sử dụng layout, nếu true là sử dụng layout main, ngược lại là không
 		}
+
+		public function Details()
+		{
+			return $this -> returnViewWithLayout(null,'store.php'); // Tham số đầu tiên là giá trị truyền lên view, tham số thứ hai là có sử dụng layout, nếu true là sử dụng layout main, ngược lại là không
+		}
 	}
 ?>

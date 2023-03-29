@@ -165,7 +165,7 @@
                                 <i class="fa fa-bars"></i>
                                 <span>Danh Mục Sản Phẩm</span>
                             </div>
-                            <ul>
+                            <ul style="background-color: #f5f5f5">
                                 <li class="active-hover">
                                     <img src="../assets/assets_Store/img/utostartup/icon/ic_baohiem.png" alt="">
                                     <a href="./shop-grid.html">Bảo Hiểm</a>
