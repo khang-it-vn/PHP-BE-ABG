@@ -13,9 +13,6 @@
 		{
 			return $this -> {$this -> action}();
 		}
-
-
-
 		// View model là data truyền lên view
 		// Layout mặc định là main
 		protected function returnView($viewModel, $fullView){
@@ -37,6 +34,12 @@
 		{
 			$view = 'views/'.get_class($this).'/'.$this->action .'.php';
 			require('views/'.$layout);
+		}
+
+		protected function returnViewWithNoLayout($viewModel)
+		{
+			$view = 'views/'.get_class($this).'/'.$this->action .'.php';
+			require($view);
 		}
 
 		
