@@ -15,6 +15,7 @@
 	require('controllers/User.php');
 	require('controllers/Store.php');
 	require('controllers/Developer.php');
+	require('controllers/AdminDoc.php');
 
 	//import util
 	require('utils/ParamUtil.php');
