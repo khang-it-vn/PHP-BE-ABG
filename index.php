@@ -3,6 +3,8 @@
 
 	session_start();
 	require('config.php');
+	//require('vendor/autoload.php');
+	require('endpoint.php');
 	//	
 	require('base/RequestFilter.php');
 	require('base/Controller.php');
@@ -16,6 +18,8 @@
 
 	//import util
 	require('utils/ParamUtil.php');
+	require('utils/GoogleUtil.php');
+	require('utils/SessionUtil.php');
 
 	$requestFilter = new RequestFilter($_REQUEST);
 	$controller = $requestFilter -> createController();
