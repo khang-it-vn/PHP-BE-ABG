@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- responsive-->
     <link rel="stylesheet" href="../assets/css/responsive.css">
-    <!-- awesome fontfamily -->
+   <!-- awesome fontfamily -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -57,7 +57,7 @@
                             <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search"
                                         style="cursor: pointer;" aria-hidden="true"></i></a> </li>
                             <li class="nav-mobile">
-                                <button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button>
+                                <button class="openbtn" onclick="openNav()"><img src="../assets/images/menu_btn.png"></button>
                             </li>
                         </ul>
                     </div>
@@ -82,10 +82,10 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
-      <script src=" js/jquery.min.js "></script>
-      <script src=" js/bootstrap.bundle.min.js "></script>
-      <script src=" js/jquery-3.0.0.min.js "></script>
-      <script src=" js/custom.js "></script>
+      <script src="../assets/js/jquery.min.js "></script>
+      <script src="../assets/js/bootstrap.bundle.min.js "></script>
+      <script src="../assets/js/jquery-3.0.0.min.js "></script>
+      <script src="../assets/js/custom.js "></script>
 
 </body>
 </html>
