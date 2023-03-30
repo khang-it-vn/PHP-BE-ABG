@@ -1,184 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" class="mdl-js">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="shortcut icon" type="image/png"
-        href="https://th.bing.com/th/id/OIP.evKumc-BJD_oCdJKVbFHZQHaHa?w=173&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7">
-
-    <link href="https://cdn.ckeditor.com/4.16.1/standard/contents.css" rel="stylesheet">
-
-    <!-- <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script> -->
+  <title>Materio</title>
+  <link rel="stylesheet" href="https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation/assets/css/0.styles.0bca5e50.css">
+  <link rel="stylesheet" href="../assets/css/layout_admin_doc.css">
+  <meta name="description" content="Materio React Admin Dashboard Template">
 </head>
 
 <body>
-    <header>
-        <h1 style="text-align: center;">Document ABG Banking</h1>
-    </header>
-
-    <div class="container">
-        <aside class="sidebar">
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search...">
-            </div>
-
-            <h2><a href="#">Add Posts</a></h2>
-
-            <h2><a href="#">List Of Posts</a></h2>
-        </aside>
-
-        <?php require($view) ?>
+  <div id="app">
+    <div class="theme-container">
+      <header class="navbar">
+        <div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon">
+            <path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z">
+            </path>
+          </svg></div> <a href="" class="home-link router-link-active"> <span class="site-name can-hide">SOLO WALLET
+            DOCS</span></a>
+        <div class="links">
+          <nav class="nav-links can-hide">
+            <div class="nav-item"><a href="" class="nav-link router-link-active">
+                Trang chủ
+              </a></div>
+            <div class="nav-item"><a href="" class="nav-link">
+                Cửa hàng
+              </a></div> <!---->
+          </nav>
+        </div>
+      </header>
+      <div class="sidebar-mask"></div>
+      <aside class="sidebar">
+        <ul class="sidebar-links">
+          <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!---->
+          </div>
+          <li>
+            <section class="sidebar-group depth-0">
+              <p class="sidebar-heading"><span>Development</span> <!----></p>
+              <ul class="sidebar-links sidebar-group-items">
+                <li><a class="sidebar-link">Folder Structure</a></li>
+                <li><a class="sidebar-link">Routing</a></li>
+                <li><a class="sidebar-link">Theming</a></li>
+                <li><a class="sidebar-link">Deployment</a></li>
+                <li><a class="sidebar-link">Redux</a></li>
+                <li><a class="sidebar-link">FakeDB</a></li>
+                <li><a class="sidebar-link">Authentication</a></li>
+                <li><a class="sidebar-link">Access Control (ACL)</a></li>
+                <li><a class="sidebar-link">Internationalization (i18n)</a></li>
+                <li><a class="sidebar-link">RTL</a></li>
+                <li><a class="sidebar-link">Loaders</a></li>
+                <li><a class="sidebar-link">Demo Configs</a></li>
+                <li><a class="sidebar-link">Environment Variables</a></li>
+              </ul>
+            </section>
+          </li>
+        </ul>
+      </aside>
+      <?php require($view) ?>
     </div>
+    
+  </div>
 
-    <footer>
-        <p>Bản quyền © 2023 - Trang tài liệu</p>
-    </footer>
-
-    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
-
-    <script src="scripts.js"></script>
-    <style>
-    /* Set default box-sizing to border-box */
-    * {
-        box-sizing: border-box;
-    }
-
-    /* Style the header */
-    header {
-        background-color: #333;
-        color: white;
-        padding: 10px;
-    }
-
-    /* Style the links in the header */
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    nav li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-    }
-
-    /* Style the container for sidebar and content */
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    /* Style the sidebar */
-    .sidebar {
-        flex-basis: 300px;
-        /* set width of sidebar */
-        background-color: #eee;
-        padding: 20px;
-    }
-
-    /* Style for search container */
-    .search-container {
-        display: flex;
-        justify-content: center;
-        margin: 0px 0px 30px 0px;
-    }
-
-    #search-input {
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        width: 100%;
-    }
-
-    @media screen and (max-width: 768px) {
-        #search-input {
-            width: 90%;
-        }
-    }
-
-    /* Style heading and links in sidebar */
-    .sidebar h2 {
-        font-size: 1.2rem;
-        margin-top: 0;
-    }
-
-    .sidebar ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .sidebar li {
-        margin-bottom: 10px;
-    }
-
-    .sidebar a {
-        color: #333;
-        text-decoration: none;
-    }
-
-    .sidebar a:hover {
-        text-decoration: underline;
-    }
-
-    /* Style the main content */
-    .content {
-        flex: 1;
-        /* make content take up remaining space */
-        padding: 20px;
-    }
-
-    /* Style headings and links in main content */
-    .content h2 {
-        font-size: 1.5rem;
-        margin-top: 20px;
-    }
-
-    .content ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .content li {
-        margin-bottom: 10px;
-    }
-
-    .content a {
-        color: #333;
-        text-decoration: none;
-    }
-
-    .content a:hover {
-        text-decoration: underline;
-    }
-
-    /* Style the footer */
-    footer {
-        background-color: #333;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        bottom: 0;
-        left: 0px;
-        right: 10px;
-    }
-
-    footer p {
-        margin: 0;
-    }
-    </style>
 </body>
 
 </html>

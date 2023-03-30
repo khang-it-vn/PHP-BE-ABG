@@ -13,13 +13,14 @@
 		{
 			return $this -> ReturnView(null,true); // Tham số đầu tiên là giá trị truyền lên view, tham số thứ hai là có sử dụng layout, nếu true là sử dụng layout main, ngược lại là không
 		}
-
-		/* ==> Version mowis kho con ho tro
 		// url là /User/login
 		public function Login()
 		{
 			return $this -> ReturnView(null,true);
 		}
+
+		/* ==> Version mowis kho con ho tro
+		
 
 		// url là /user/google
 		public function Google()
@@ -53,5 +54,7 @@
 			
 		}
 
+
+		
 	}
 ?>
