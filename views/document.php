@@ -31,7 +31,7 @@
             <h2><a href="#">List Of Posts</a></h2>
         </aside>
 
-       <?php require($view) ?>
+        <?php require($view) ?>
     </div>
 
     <footer>

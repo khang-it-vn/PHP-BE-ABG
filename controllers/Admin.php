@@ -7,5 +7,10 @@
         {
            return $this -> returnViewWithLayout(null,'document.php');
         }
+
+        public function List()
+        {
+           return $this -> returnViewWithLayout(null,'document.php');
+        }
     }
 ?>
