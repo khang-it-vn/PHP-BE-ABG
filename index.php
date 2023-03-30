@@ -14,8 +14,8 @@
 	require('controllers/Account.php');
 	require('controllers/User.php');
 	require('controllers/Store.php');
-	require('controllers/Admin.php');
-	require('controllers/AdminDoc.php');
+	require('controllers/Developer.php');
+
 	//import util
 	require('utils/ParamUtil.php');
 	require('utils/GoogleUtil.php');
