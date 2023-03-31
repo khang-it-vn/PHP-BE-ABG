@@ -16,7 +16,7 @@
 	require('controllers/Store.php');
 	require('controllers/Developer.php');
 	require('controllers/AdminDoc.php');
-
+	require('controllers/AdminStore.php');
 	//import util
 	require('utils/ParamUtil.php');
 	require('utils/GoogleUtil.php');
@@ -24,6 +24,7 @@
 
 	// import model
 	require('models/AdminDocModel.php');
+	
 
 	$requestFilter = new RequestFilter($_REQUEST);
 	$controller = $requestFilter -> createController();
