@@ -36,4 +36,40 @@ class AdminStoreModel extends DbContext
             return  $response -> filename;
         }
     }
+
+    public function Add()
+    {
+        if(isset($_POST['submit']))
+        {
+            $name = $_POST["name"];
+            $price = $_POST["price"];
+            $category = $_POST["mySelect"];
+            $description = $_POST["content"];
+            $image = $this->saveImage();
+            $sql = "INSERT INTO product (name, image, description, price , id) VALUES (:name, :image, :description, :price, :category)";
+            $this ->query( $sql);
+                $this->bind(":name",$name);
+                $this ->bind(":image", $image);
+                $this ->bind(":description", $description);
+                $this ->bind(":price", $price);
+                $this ->bind(":category", $category);
+                $tatusCode = $this->execute();
+                if($statusCode = '00000')
+                {
+                    header("Location: ".ROOT_URL .'adminStore/index');
+                }
+                echo `<p>`.$statusCode.`</p>`;
+        }
+
+    }
+
+    public function GetdataCategory()
+    {
+       $sql = 'SELECT * FROM category';
+       $this -> query($sql);
+       return $this-> resultSet();
+    }
+    
+
+
 }

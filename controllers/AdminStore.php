@@ -9,9 +9,11 @@
         public function Add()
         {
             $adminStoreModel = new AdminStoreModel;
-            $adminStoreModel -> saveImage();
+            $adminStoreModel -> Add();
 
-           return $this -> returnViewWithLayout(null, 'admin_store.php');
+           return $this -> returnViewWithLayout($adminStoreModel->GetdataCategory(), 'admin_store.php');
         }
+
+        
     }
 ?>
