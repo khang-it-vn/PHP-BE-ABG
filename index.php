@@ -22,6 +22,9 @@
 	require('utils/GoogleUtil.php');
 	require('utils/SessionUtil.php');
 
+	// import model
+	require('models/AdminDocModel.php');
+
 	$requestFilter = new RequestFilter($_REQUEST);
 	$controller = $requestFilter -> createController();
 	if($controller)
