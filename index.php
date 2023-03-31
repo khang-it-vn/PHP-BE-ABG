@@ -24,7 +24,8 @@
 
 	// import model
 	require('models/AdminDocModel.php');
-	
+	require('models/AdminStoreModel.php');
+
 
 	$requestFilter = new RequestFilter($_REQUEST);
 	$controller = $requestFilter -> createController();

@@ -8,7 +8,10 @@
 
         public function Add()
         {
-            return $this -> returnViewWithLayout(null, 'admin_store.php');
+            $adminStoreModel = new AdminStoreModel;
+            $adminStoreModel -> saveImage();
+
+           return $this -> returnViewWithLayout(null, 'admin_store.php');
         }
     }
 ?>
