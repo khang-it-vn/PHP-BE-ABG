@@ -4,7 +4,7 @@
 	define("DB_HOST", "localhost");
 	define("DB_USER", "root");
 	define("DB_PASS", "mysql");
-	define("DB_NAME", "dbname");
+	define("DB_NAME", "abg_v1");
 
 	// definde URL
 	define("ROOT_PATH", "/");
@@ -15,4 +15,9 @@
 	define("CLIENT_ID",'365062625571-oipgvhgr69fn34i2hahqdk1483hdqllg.apps.googleusercontent.com');	
 	define("CLIENT_SECRET",'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');	
 	define("CLIENT_REDIRECT","http://localhost/PHP-BE-ABG/user/checkAccountFromGoogle");	
+
+
+	//define role
+	define("ADMIN_DOC", 1);
+	define("ADMIN_STORE", 2);
 ?>

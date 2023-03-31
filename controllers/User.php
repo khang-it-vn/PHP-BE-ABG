@@ -1,8 +1,18 @@
 <?php
 
+use Google\Service\Fitness\Session;
+
 	class User extends Controller{
 
-		// url là /User/index sẽ vào function này
+
+		// url là user/index 
+		public function Index()
+		{
+			return $this -> returnView(null,true);
+		}
+
+
+		// url là /User/wallet sẽ vào function này
 		public function Wallet()
 		{
 			return $this -> ReturnView(null,true); // Tham số đầu tiên là giá trị truyền lên view, tham số thứ hai là có sử dụng layout, nếu true là sử dụng layout main, ngược lại là không
@@ -46,16 +56,14 @@
 			);
 
 			$context  = stream_context_create($options);
-			$response = file_get_contents(E_LOGIN, false, $context);
-			print_r($response);
-
-			// detech token and role from response
-			SessionUtil::createSessionWithTokenRole($response[1],$response[2][0]);
+			$response = file_get_contents(E_LOGIN, false, $context);		
+			$response = json_decode($response, true);
 			
+			// detech token and role from response
+			SessionUtil::createSessionWithTokenRole($response[1],$response[2]['roles']['from']);
+			// check role and redirect to access page
+			SessionUtil::getRoleRedirect();
 		}
-
-
-
-		
+	
 	}
 ?>
