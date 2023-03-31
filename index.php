@@ -21,10 +21,12 @@
 	require('utils/ParamUtil.php');
 	require('utils/GoogleUtil.php');
 	require('utils/SessionUtil.php');
+	require('utils/CookieUtil.php');
 
 	// import model
 	require('models/AdminDocModel.php');
 	require('models/AdminStoreModel.php');
+	require('models/DocumentModel.php');
 
 
 	$requestFilter = new RequestFilter($_REQUEST);
