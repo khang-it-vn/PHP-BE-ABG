@@ -193,71 +193,8 @@
         </section>
     </header>
     <!-- Header Section End -->
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col-lg-3" style="pointer-events: none;"></div>
-                <div class="col-lg-9">
-                    <div class="banner__slider owl-carousel">
-                        <div class="hero__item set-bg" data-setbg="../assets/assets_Store/img/utostartup/banner1.jpg">
-                        </div>
-                        <div class="hero__item set-bg" data-setbg="../assets/assets_Store/img/utostartup/banner1.1.jpg">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="banner2__slider owl-carousel">
-                                <img class="hero2__item" src="../assets/assets_Store/img/utostartup/banner2.jpg" alt="">
-                                <img class="hero2__item" src="../assets/assets_Store/img/utostartup/banner2.2.jpg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="banner3__slider owl-carousel">
-                                <img class="hero3__item" src="../assets/assets_Store/img/utostartup/banner3.jpg" alt="">
-                                <img class="hero3__item" src="../assets/assets_Store/img/utostartup/banner3.3.jpg"
-                                    alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
-
-    <!-- Categories Section Begin -->
-    <div class="container hero mb--50">
-        
-            <?php
-        $total = count($viewModel['category']);
-        $line = $total / 10;
-        $i = 0;
-        for ($l = 1; $l < $line + 1; $l++) {
-            ?>
-            <div class="box-category">
-                <?php
-                while ($i < $l * 10  && $i<$total) {
-                    ?>
-                    <a href="?id=<?php echo $viewModel['category'][$i]['id'] ?>" class="category__menu">
-                        <img src="http://localhost:3000/img/<?php echo $viewModel['category'][$i]['image'] ?>" alt="">
-                        <h4><?php echo $viewModel['category'][$i]['name'] ?></h4>
-                    </a>
-                    <?php
-                    $i++;
-                }
-                ?>
-            </div>
-            <?php
-}
-?>
 
 
-
-        
-    </div>
-    <!-- Categories Section End -->
 
     <?php require($view)?>
 
