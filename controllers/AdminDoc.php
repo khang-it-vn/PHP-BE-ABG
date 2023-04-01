@@ -3,8 +3,10 @@
         public function Index()
         {
             $adminModel = new AdminDocModel();
-            $adminModel -> GetData();
-            return $this -> returnViewWithLayout(null,'admin_doc.php');
+            $array = array("docs" => $adminModel -> GetData(), "pages" => $adminModel -> count()); 
+        
+            return $this -> returnViewWithLayout($array,'admin_doc.php');
+            
         }
 
         public function Add()

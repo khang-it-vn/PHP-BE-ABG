@@ -15,7 +15,7 @@
                 $this->bind(":title",$title);
                 $this ->bind(":description", $description);
 
-                $tatusCode = $this->execute();
+                $statusCode = $this->execute();
 
                 if($statusCode = '00000')
                 {
@@ -32,15 +32,28 @@
             $params = $paramUtil -> GetParamFromUri();
 
             $page = 0;
+
             if(isset($params['page']))
             {
                 $page = $params['page'];
             }
-            $offset = $page * 10;
-            
-            $sql = "SELECT * FROM doc LIMIT 10 OFFSET :offset";
+
+            $offset = $page * 8;
+
+            $sql = "SELECT * FROM doc LIMIT 8 OFFSET :offset";
             $this -> query($sql);
-            $this -> bind(":offset", $offset);
+            $this ->bind(":offset", $offset);
+
+            return $this -> resultSet();
+
+        }
+
+        public function count()
+        {
+            $sql = "SELECT count(*) as total FROM doc";
+            $this -> query($sql);
+            $page = $this -> single()["total"]/10+1;
+            return $page;
         }
     }
 ?>
