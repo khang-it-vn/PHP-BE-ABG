@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="featured__controls">
                         <div class="top__categories__title">
-                            <h2>SẢN PHẨM NỔI BẬT</h2>
+                            <h2>DANH SÁCH SẢN PHẨM</h2>
                         </div>
                         <ul>
                             <li class="active" data-mixitup-control data-filter="*">All</li>
@@ -16,133 +16,53 @@
                         </ul>
                     </div>
                     <!--  -->
-                    <div class="row featured__filter best-selling">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 mix smartPhone fresh-meat">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg"
-                                    data-setbg="https://ict-imgs.vgcloud.vn/2022/03/29/11/phat-trien-them-10-trieu-thue-bao-su-dung-smartphone-nam-2022.JPG">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <div class="featured__sale">
-                                        <p>Sale<br> 50%</p>
+                            <?php
+                                $total = count($viewModel['product']);
+                                $line = $total / 4;
+                                $i = 0;
+                                for ($l = 1; $l < $line + 1; $l++) {
+                            ?>
+                                <div class="row featured__filter best-selling">
+                                <?php
+                                    while ($i < $l * 4 && $i<$total) {
+                                ?>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 mix smartPhone fresh-meat">
+                                        <div class="featured__item">
+                                            <a href="?id=<?php echo $viewModel['category'][$i]['id'] ?>">
+                                                <div class="featured__item__pic set-bg">
+                                                    <img src="http://localhost:3000/img/<?php echo $viewModel['product'][$i]['image'] ?>" alt="">
+                                                    
+                                                </div>
+                                                <style>
+                                                    .featured__item__pic {
+                                                        background-size: cover;
+                                                        background-position: center center;
+                                                        width: 100%;
+                                                        height: 0;
+                                                        padding-bottom: 110%; /* tạo tỉ lệ khung hình vuông */
+                                                    }
+                                                </style>
+                                                <div class="featured__item__text">
+                                                    <h6><?php echo $viewModel['product'][$i]['name'] ?></h6>
+                                                    <div class="featured__item__price">
+                                                        <h4>Price: <?php echo $viewModel['product'][$i]['price'] ?></h4>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
+                                <?php
+                                        $i++;
+                                    }
+                                ?>
                                 </div>
-                                <div class="featured__item__text">
-                                    <a href="./shop-details.html">
-                                        <div class="rating">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
-                                        <h6>Crab Pool Security</h6>
-                                        <div class="featured__item__price">
-                                            <h6> 30.000VNĐ</h6>
-                                            <h4> 30.000VNĐ</h4>
-                                        </div>
+                            <?php
+                                }
+                            ?>
 
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 mix smartPhone">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg" data-setbg="../assets/assets_Store/img/utostartup/product/p4.png">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <div class="featured__sale">
-                                        <p>Sale<br> 50%</p>
-                                    </div>
-                                </div>
-                                <div class="featured__item__text">
-                                    <a href="./shop-details.html">
-                                        <div class="rating">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
-                                        <h6>Crab Pool Security</h6>
-                                        <div class="featured__item__price">
-                                            <h6> 30.000VNĐ</h6>
-                                            <h4> 30.000VNĐ</h4>
-                                        </div>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 mix smartPhone">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg"
-                                    data-setbg="https://image.thanhnien.vn/w1024/Uploaded/2022/aybunux/2022_06_30/3641-3999.jpg">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <div class="featured__sale">
-                                        <p>Sale<br> 50%</p>
-                                    </div>
-                                </div>
-                                <div class="featured__item__text">
-                                    <a href="./shop-details.html">
-                                        <div class="rating">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
-                                        <h6>Crab Pool Security</h6>
-                                        <div class="featured__item__price">
-                                            <h6> 30.000VNĐ</h6>
-                                            <h4> 30.000VNĐ</h4>
-                                        </div>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 mix Apple-watch">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg" data-setbg="../assets/assets_Store/img/utostartup/product/p3.png">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <div class="featured__sale">
-                                        <p>Sale<br> 50%</p>
-                                    </div>
-                                </div>
-                                <div class="featured__item__text">
-                                    <a href="./shop-details.html">
-                                        <div class="rating">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
-                                        <h6>Crab Pool Security</h6>
-                                        <div class="featured__item__price">
-                                            <h6> 30.000VNĐ</h6>
-                                            <h4> 30.000VNĐ</h4>
-                                        </div>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                        
+                    
                     <!--  -->
                 </div>
             </div>
@@ -152,150 +72,6 @@
     <!-- Featured Section End -->
 
 
-    <section class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="featured__controls d-block">
-                        <div class="top__categories__title d-flex align-items-center justify-content-between">
-                            <h2>SẢN PHẨM MỚI</h2>
-                            <a href="./shop-grid.html">+ Xem Thêm</a>
-                        </div>
-                    </div>
-                    <!--  -->
-                    <div class="row best-selling">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg"
-                                    data-setbg="https://ict-imgs.vgcloud.vn/2022/03/29/11/phat-trien-them-10-trieu-thue-bao-su-dung-smartphone-nam-2022.JPG">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <div class="featured__sale">
-                                        <p>Sale<br> 50%</p>
-                                    </div>
-                                </div>
-                                <div class="featured__item__text">
-                                    <a href="./shop-details.html">
-                                        <div class="rating">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
-                                        <h6>Crab Pool Security</h6>
-                                        <div class="featured__item__price">
-                                            <h6> 30.000VNĐ</h6>
-                                            <h4> 30.000VNĐ</h4>
-                                        </div>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 ">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg" data-setbg="../assets/assets_Store/img/utostartup/product/p4.png">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <div class="featured__sale">
-                                        <p>Sale<br> 50%</p>
-                                    </div>
-                                </div>
-                                <div class="featured__item__text">
-                                    <a href="./shop-details.html">
-                                        <div class="rating">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
-                                        <h6>Crab Pool Security</h6>
-                                        <div class="featured__item__price">
-                                            <h6> 30.000VNĐ</h6>
-                                            <h4> 30.000VNĐ</h4>
-                                        </div>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 ">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg"
-                                    data-setbg="https://image.thanhnien.vn/w1024/Uploaded/2022/aybunux/2022_06_30/3641-3999.jpg">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <div class="featured__sale">
-                                        <p>Sale<br> 50%</p>
-                                    </div>
-                                </div>
-                                <div class="featured__item__text">
-                                    <a href="./shop-details.html">
-                                        <div class="rating">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
-                                        <h6>Crab Pool Security</h6>
-                                        <div class="featured__item__price">
-                                            <h6> 30.000VNĐ</h6>
-                                            <h4> 30.000VNĐ</h4>
-                                        </div>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 ">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg" data-setbg="../assets/assets_Store/img/utostartup/product/p3.png">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <div class="featured__sale">
-                                        <p>Sale<br> 50%</p>
-                                    </div>
-                                </div>
-                                <div class="featured__item__text">
-                                    <a href="./shop-details.html">
-                                        <div class="rating">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
-                                        <h6>Crab Pool Security</h6>
-                                        <div class="featured__item__price">
-                                            <h6> 30.000VNĐ</h6>
-                                            <h4> 30.000VNĐ</h4>
-                                        </div>
-
-                                    </a>
-                                </div>
-                            </div>
-                    </div>
-                    <!--  -->
-
-                </div>
-            </div>
-
-        </div>
-    </section>
 
 
     <!-- =============================best saleling======================================== -->
@@ -344,7 +120,7 @@
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 ">
                             <div class="featured__item">
-                                <div class="featured__item__pic set-bg" data-setbg="../assets/assets_Store/img/utostartup/product/p4.png">
+                            <img src="http://localhost:3000/img/<?php echo $viewModel['category'][$i]['image'] ?>" alt="">
                                     <ul class="featured__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -465,38 +241,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6 col-6 ">
-                            <div class="featured__item">
-                                <div class="featured__item__pic set-bg"
-                                    data-setbg="https://image.thanhnien.vn/w1024/Uploaded/2022/aybunux/2022_06_30/3641-3999.jpg">
-                                    <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <div class="featured__sale">
-                                        <p>Sale<br> 50%</p>
-                                    </div>
-                                </div>
-                                <div class="featured__item__text">
-                                    <a href="./shop-details.html">
-                                        <div class="rating">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
-                                        <h6>Crab Pool Security</h6>
-                                        <div class="featured__item__price">
-                                            <h6> 30.000VNĐ</h6>
-                                            <h4> 30.000VNĐ</h4>
-                                        </div>
 
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <!--  -->
 
@@ -514,7 +259,7 @@
                     <div class="col-lg-12">
                         <div class="partner__item">
                             <div class="partner__item__pic">
-                                <img src="../assets/assets_Store/img/partner/1-150x150.png" alt="">
+                                <img src="../assets/assets_Store/img/partner/1-150x150.png" alt="" styte="weight:70px; height:70px">
                             </div>
                         </div>
                     </div>
