@@ -57,21 +57,20 @@
         if(value1.length === 1 && value2.length === 1 && value3.length === 1 && value4.length === 1 && value5.length === 1 && value6.length === 1) {
             // Nếu tất cả đều thỏa mãn, nối lại thành chuỗi trong biến mpass
             var mpass = ""+ value1 + value2 + value3 + value4 + value5 + value6;
-            console.log(mpass);
+            //console.log(mpass);
             $.ajax({
-                url: "<?php echo ROOT_URL . "updatempass"?>",
+                url: "<?php echo ROOT_URL . "user/updatempass"?>",
                 data: {mpass},
                 method: "POST",
                 success: function(data) {
-                    if(data)
-                    {
-                        window.location.href = "<?php echo ROOT_URL . "home/index"?>"
-                    }
+                    console.log(data);
+                   if(data == true)
+                    window.location.href = "<?php echo ROOT_URL. "user/index"?>";
                 }
             })
             return;
         }
-        alert("Please enter the m pass");
+        alert("Please enter the m pass correct");
     })
 
 </script>

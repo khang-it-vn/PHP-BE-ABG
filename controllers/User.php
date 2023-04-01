@@ -108,7 +108,13 @@ class User extends Controller
 
 	public function updatempass()
 	{
-		$this ->updateMPassPost();
+		$status = $this ->updateMPassPost();
+		// if status == 1 is success: return
+		if($status == 1)
+		{
+			echo $status;
+			return;
+		}
 		return $this ->returnView(null, true);
 	}
 
@@ -116,7 +122,16 @@ class User extends Controller
 	{
 		if(isset($_POST['mpass']))
 		{
-
+			$body = array('mpass' => $_POST['mpass']);
+			$response = HttpUtil::put(E_UPDATE_M_PASS,$body);
+			// res:
+			// Array
+			// 	(
+			// 		[message] => Update mpass success
+			// 		[success] => 1
+			// 	)
+			return $response['success'];
+			
 		}
 	}
 

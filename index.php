@@ -22,6 +22,7 @@
 	require('utils/GoogleUtil.php');
 	require('utils/SessionUtil.php');
 	require('utils/CookieUtil.php');
+	require('utils/HttpUtil.php');
 
 	// import model
 	require('models/AdminDocModel.php');

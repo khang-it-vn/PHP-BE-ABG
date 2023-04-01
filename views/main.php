@@ -53,10 +53,14 @@
                     </div>
                     <div class="col-sm-4">
                         <ul class="email text_align_right">
-                            <li class="d_none"><a href="<?php echo ROOT_URL?>user/login">Nguyễn Hoàng Khang<i class="fa fa-user"
+                            <?php if(SessionUtil::getInfoToken() != null):?>
+                                <li class="d_none"><a style="font-size: 20px;color: white" href=""><?php echo SessionUtil::getInfoToken()->fullname . "  "?><i class="fa fa-user"
                                         aria-hidden="true"></i></a></li>
-                            <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search"
-                                        style="cursor: pointer;" aria-hidden="true"></i></a> </li>
+                                <?php else:?>
+                                    <li class="d_none"><a href="<?php echo ROOT_URL?>user/login">Login<i class="fa fa-user"
+                                        aria-hidden="true"></i></a></li>
+                                    <?php endif;?>
+                            
                             <li class="nav-mobile">
                                 <button class="openbtn" onclick="openNav()"><img src="../assets/images/menu_btn.png"></button>
                             </li>
