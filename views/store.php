@@ -238,7 +238,7 @@
             ?>
             <div class="box-category">
                 <?php
-                while ($i < $l * 10) {
+                while ($i < $l * 10  && $i<$total) {
                     ?>
                     <a href="?id=<?php echo $viewModel['category'][$i]['id'] ?>" class="category__menu">
                         <img src="http://localhost:3000/img/<?php echo $viewModel['category'][$i]['image'] ?>" alt="">
