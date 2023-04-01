@@ -44,9 +44,10 @@
                     <div class="col-sm-6">
                         <ul class="social_icon text_align_right d_none" style="font-size: medium;">
                             <li> <a href="<?php echo ROOT_URL .'user/index'?>"><i>Home</i></a></li>
-                            <li> <a href="<?php echo ROOT_URL .'user/wallet'?>"><i>Wallet</i></a></li>
                             <li> <a href="<?php echo ROOT_URL .'user/market'?>"><i>Markets</i></a></li>
+                            <li> <a href="<?php echo ROOT_URL .'customer/index'?>"><i>Documents</i></a>
                             <li> <a href="<?php echo ROOT_URL .'developer/index'?>"><i>Documents</i></a>
+                            <li> <a href="<?php echo ROOT_URL .'user/wallet'?>"><i>Wallet</i></a></li>
                             </li>
                         </ul>
                     </div>
