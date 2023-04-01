@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Iphone 12 Pro Max</h2>
+                        <h2><?php echo $viewModel['product']['name']?></h2>
                     </div>
                 </div>
             </div>
@@ -12,7 +12,7 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <!-- Product Details Section Begin -->
+    <!-- Product Details Section Begin --> 
     <section class="product-details spad">
         <div class="container">
             <div class="row">
@@ -20,15 +20,15 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="https://ict-imgs.vgcloud.vn/2022/03/29/11/phat-trien-them-10-trieu-thue-bao-su-dung-smartphone-nam-2022.JPG"
+                             src="http://localhost:3000/img/<?php echo $viewModel['product']['image'] ?>" 
                                 alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-6">
                     <div class="product__details__text">
-                        <h3>Iphone 12 Pro Max</h3>
-                        <div class="product__details__price"> 50.00VNĐ</div>
+                        <h3><?php echo $viewModel['product']['name']?></h3>
+                        <div class="product__details__price"> <?php echo $viewModel['product']['price']?>USDT</div>
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
@@ -42,30 +42,10 @@
                     <div class="tab-content custom-tab">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__tab__desc">
-                                <h6>Products Infomation</h6>
-                                <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                                    Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Vivamus
-                                    suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam
-                                    vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada.
-                                    Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat,
-                                    accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a
-                                    pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula
-                                    elementum sed sit amet dui. Vestibulum ante ipsum primis in faucibus orci luctus
-                                    et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam
-                                    vel, ullamcorper sit amet ligula. Proin eget tortor risus.</p>
+                                <h5>Products Infomation</h5>
+                                <?php echo $viewModel['product']['description']?>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="product__details__tab">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
-                                    aria-selected="true">Description</a>
-                            </li>
-                        </ul>
-                        
                     </div>
                 </div>
             </div>
