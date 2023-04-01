@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="./shoping-cart.html" class="primary-btn">ADD TO CARD</a>
+                        <a href="<?php echo ROOT_URL.'store/Details?id='.$viewModel['product'][$i]['id_product']?>" class="primary-btn">ADD TO CARD</a>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                     </div>
                     <div class="tab-content custom-tab">
