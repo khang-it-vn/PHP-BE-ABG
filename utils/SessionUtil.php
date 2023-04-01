@@ -38,8 +38,39 @@
         }
 
         // get token current 
-        public function FunctionName()
+        public static function getToken()
         {
             return $_SESSION['s_token']['token'];
+        }
+
+
+        public static function setInfoToken($info)
+        {
+            $_SESSION['info'] = $info;
+        }
+
+        public static function getInfoToken()
+        {
+            return $_SESSION['info'];
+        }
+        public function AddOrder($product, $total)
+        {
+          if(isset($_SESSION['oders']))
+          {
+            $_SESSION['oders'] = array(array ($product,$total));
+          }
+          else{
+            for($i = 0; $i<count($_SESSION['oders']); $i++)
+            {
+                    if($_SESSION['oders'][$i][0]['id_product'] === $product['id_product'])
+                    {
+                        $_SESSION['oders'][$i][1] += $total;
+                       return;
+                    }
+                
+            }
+            $array = array($product, $total);
+            array_push($_SESSION['oders'],$array);
+          }
         }
     }

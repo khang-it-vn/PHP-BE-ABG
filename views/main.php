@@ -53,7 +53,7 @@
                     </div>
                     <div class="col-sm-4">
                         <ul class="email text_align_right">
-                            <li class="d_none"><a href="Javascript:void(0)"><i class="fa fa-user"
+                            <li class="d_none"><a href="<?php echo ROOT_URL?>user/login">Nguyễn Hoàng Khang<i class="fa fa-user"
                                         aria-hidden="true"></i></a></li>
                             <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search"
                                         style="cursor: pointer;" aria-hidden="true"></i></a> </li>
