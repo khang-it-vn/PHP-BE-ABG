@@ -2,7 +2,11 @@
     class AdminStore extends Controller{
         public function Index()
         {
-            return $this -> returnViewWithLayout(null, 'admin_store.php');
+            $adminStoreModel = new AdminStoreModel;
+            
+            
+            $array = array('ListProduct'=>$adminStoreModel -> GetData());
+            return $this -> returnViewWithLayout($array, 'admin_store.php');
 
         }
 
@@ -14,6 +18,11 @@
            return $this -> returnViewWithLayout($adminStoreModel->GetdataCategory(), 'admin_store.php');
         }
 
-        
+        public function Delete ()
+        {
+            $adminStoreModel = new AdminStoreModel;
+            $adminStoreModel -> Delete();
+            header('Location: ' .ROOT_URL.'adminStore/Index');
+        }
     }
 ?>

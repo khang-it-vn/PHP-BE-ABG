@@ -36,7 +36,12 @@ class AdminStoreModel extends DbContext
             return  $response -> filename;
         }
     }
-
+public function GetData()
+{
+    $sql  = 'SELECT b.id_product, b.name as nameproduct, b.image, b.description, b.price, c.id, c.name FROM product b JOIN category c ON b.id = c.id';
+    $this->query($sql);
+    return $this->resultSet();
+}
     public function Add()
     {
         if(isset($_POST['submit']))
@@ -70,6 +75,15 @@ class AdminStoreModel extends DbContext
        return $this-> resultSet();
     }
     
-
+    public function Delete()
+        {
+            $para = new ParamUtil();
+           $array =  $para->GetParamFromUri(); 
+            $id =  $array['id'];
+            $sql = 'DELETE FROM product WHERE id_product = :id';
+            $this ->query($sql);
+            $this->bind(':id', $id);
+            $tatusCode = $this->execute();
+        }
 
 }
