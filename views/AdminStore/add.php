@@ -39,13 +39,13 @@ editor.on('change', function(evt) {
 
 
 function addPost(evt) {
-    let title = document.getElementById('title').value;
     let content = document.getElementById('content-post').value;
 
     if (title.length <= 0 || content.length <= 0) {
         alert('Bạn vẫn chưa soạn thảo nội dung đầy đủ');
         return;
-    }
+    }    let title = document.getElementById('title').value;
+
 
 }
 </script>
