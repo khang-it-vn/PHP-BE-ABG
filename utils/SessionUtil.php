@@ -48,11 +48,12 @@
         {
             $_SESSION['info'] = $info;
         }
-
+// Lấy info account
         public static function getInfoToken()
         {
             return $_SESSION['info'];
         }
+
         public function AddOrder($product, $total)
         {
           if(isset($_SESSION['oders']))
