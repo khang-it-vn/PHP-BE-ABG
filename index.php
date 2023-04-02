@@ -29,6 +29,7 @@
 	require('models/AdminStoreModel.php');
 	require('models/DocumentModel.php');
 	require('models/StoreModel.php');
+	require('models/UserModel.php');
 
 
 	$requestFilter = new RequestFilter($_REQUEST);

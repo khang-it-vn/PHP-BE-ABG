@@ -21,4 +21,6 @@
     // method post
     define("E_GET_INFO",E_BASE . "getUserInfo");
 
+    define("E_GET_MARKET",E_BASE . "binance/getPriceFollowPage/10");
+
 ?>
