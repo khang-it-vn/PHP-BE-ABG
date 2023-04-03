@@ -29,6 +29,7 @@
                     <div class="product__details__text">
                         <h3><?php echo $viewModel['product']['name']?></h3>
                         <div class="product__details__price"> <?php echo $viewModel['product']['price']?>USDT</div>
+
                         <form action="Order" method="post">
                         <div class="product__details__quantity">
                             <div class="quantity">
@@ -39,6 +40,7 @@
                             </div>
                         </div>
                         <input type="submit" value="ADD TO CARD" class="primary-btn"></input>
+
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         </form>
                     </div>

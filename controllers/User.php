@@ -5,7 +5,7 @@ use Google\Service\Fitness\Session;
 class User extends Controller
 {
 
-
+ 
 	// url là user/index 
 	public function Index()
 	{
@@ -22,7 +22,9 @@ class User extends Controller
 	// url là /User/Market sẽ vào function này
 	public function Market()
 	{
-		return $this->ReturnView(null, true); // Tham số đầu tiên là giá trị truyền lên view, tham số thứ hai là có sử dụng layout, nếu true là sử dụng layout main, ngược lại là không
+		$model = new UserModel();
+		$array = $model->getMarket();
+		return $this->ReturnView($array, 'market.php'); // Tham số đầu tiên là giá trị truyền lên view, tham số thứ hai là có sử dụng layout, nếu true là sử dụng layout main, ngược lại là không
 	}
 	// url là /User/login
 	public function Login()

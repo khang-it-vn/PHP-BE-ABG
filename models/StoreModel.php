@@ -33,6 +33,23 @@
             $this->bind(':id', $id);
             return $this-> single();
         }
+
+        public function getOrder()
+        {
+            if(isset($_POST['submit']))
+            {
+                $id = $_POST["id_product"];
+                $total = $_POST["total"];
+                $sql = "SELECT * FROM product WHERE id_product = :id";
+                $this->query($sql);
+                $this->bind(':id', $id);
+                $product = $this-> single();
+               $session = new SessionUtil();
+              $session->AddOrder($product, $total);
+          
+            }
+
+        }
         
     }
 ?>
