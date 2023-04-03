@@ -24,6 +24,15 @@
             $this->bind(':id', $id);
             return $this-> single();
         }
+
+        public function getProductById()
+        {
+            $id =  $_POST['id'];
+            $sql = "SELECT * FROM product WHERE id_product = :id";
+            $this->query($sql);
+            $this->bind(':id', $id);
+            return $this-> single();
+        }
         
     }
 ?>

@@ -29,15 +29,18 @@
                     <div class="product__details__text">
                         <h3><?php echo $viewModel['product']['name']?></h3>
                         <div class="product__details__price"> <?php echo $viewModel['product']['price']?>USDT</div>
+                        <form action="Order" method="post">
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
-                                    <input type="text" value="1">
+                                    <input type="number" name="number" min = 1  value="1">
+                                    <input type="number" name="id" value="<?php echo $viewModel['product']['id_product']?>" hidden>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo ROOT_URL.'store/Details?id='.$viewModel['product'][$i]['id_product']?>" class="primary-btn">ADD TO CARD</a>
+                        <input type="submit" value="ADD TO CARD" class="primary-btn"></input>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                        </form>
                     </div>
                     <div class="tab-content custom-tab">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">

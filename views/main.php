@@ -45,7 +45,7 @@
                         <ul class="social_icon text_align_right d_none" style="font-size: medium;">
                             <li> <a href="<?php echo ROOT_URL .'user/index'?>"><i>Home</i></a></li>
                             <li> <a href="<?php echo ROOT_URL .'user/market'?>"><i>Markets</i></a></li>
-                            <li> <a href="<?php echo ROOT_URL .'customer/index'?>"><i>Documents</i></a>
+                            <li> <a href="<?php echo ROOT_URL .'store/index'?>"><i>Store</i></a>
                             <li> <a href="<?php echo ROOT_URL .'developer/index'?>"><i>Documents</i></a>
                             <li> <a href="<?php echo ROOT_URL .'user/wallet'?>"><i>Wallet</i></a></li>
                             </li>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="col-sm-4">
                         <ul class="email text_align_right">
-                            <?php if(SessionUtil::getInfoToken() != null):?>
+                            <?php if(SessionUtil::getInfoToken() !== null):?>
                                 <li class="d_none"><a style="font-size: 20px;color: white" href=""><?php echo SessionUtil::getInfoToken()->fullname . "  "?><i class="fa fa-user"
                                         aria-hidden="true"></i></a></li>
                                 <?php else:?>

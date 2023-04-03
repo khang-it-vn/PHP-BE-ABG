@@ -42,7 +42,7 @@
             <div class="input-group">
 
               <div class="form-outline">
-                <input id="search-box" type="text" class="form-control" style="border-radius:30px" name="title" />
+                <input id="search-box" type="text" class="form-control" style="border-radius:30px; width: 175px;" name="title" />
               </div>
               <button type="submit" class="ml-1 btn btn-primary" style="border-radius:30px">
                 <i class="fas fa-search"></i>
