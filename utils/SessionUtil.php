@@ -54,24 +54,52 @@
             return $_SESSION['info'];
         }
 
-        public function AddOrder($product, $total)
-        {
-          if(isset($_SESSION['oders']))
-          {
-            $_SESSION['oders'] = array(array ($product,$total));
-          }
-          else{
-            for($i = 0; $i<count($_SESSION['oders']); $i++)
-            {
-                    if($_SESSION['oders'][$i][0]['id_product'] === $product['id_product'])
-                    {
-                        $_SESSION['oders'][$i][1] += $total;
-                       return;
-                    }
-                
+        public static function AddOrder($product, $quantity) {
+            // kiểm tra xem session giỏ hàng đã tồn tại hay chưa
+            if(!isset($_SESSION['cart'])) {
+                $_SESSION['cart'] = array();
             }
-            $array = array($product, $total);
-            array_push($_SESSION['oders'],$array);
-          }
+            
+            // Lặp qua từng sản phẩm trong giỏ hàng và tăng số lượng nếu sản phẩm đã có
+            foreach ($_SESSION['cart'] as &$item) {
+                if ($item['id_product'] === $product['id_product']) {
+                    $item['quantity'] += $quantity;
+                    return;
+                }
+            }
+            
+            // Nếu sản phẩm không có trong giỏ hàng, thì thêm mới sản phẩm vào giỏ hàng
+            $_SESSION['cart'][] = array(
+                'id_product' => $product['id_product'],
+                "image" => $product['image'],
+                'name' => $product['name'],
+                'price' => $product['price'],
+                'quantity' => $quantity,
+            );
+        }
+        
+        public static function getTotal() {
+            $total = 0;
+            if(isset($_SESSION['cart'])) {
+                foreach($_SESSION['cart'] as $item) {
+                    $total += $item['price'] * $item['quantity'];
+                }
+            }
+            return $total;
+        }
+
+        public static function getTotalQuantity() {
+            $totalQuantity = 0;
+            if(isset($_SESSION['cart'])) {
+                foreach($_SESSION['cart'] as $item) {
+                    $totalQuantity += $item['quantity'];
+                }
+            }
+            return $totalQuantity;
+        }
+
+        public  static function GetOrders()
+        {
+           return $_SESSION['cart'];
         }
     }

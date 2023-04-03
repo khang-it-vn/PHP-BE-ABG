@@ -25,6 +25,15 @@
             return $this-> single();
         }
 
+        public function getProductById()
+        {
+            $id =  $_POST['id'];
+            $sql = "SELECT * FROM product WHERE id_product = :id";
+            $this->query($sql);
+            $this->bind(':id', $id);
+            return $this-> single();
+        }
+
         public function getOrder()
         {
             if(isset($_POST['submit']))
@@ -36,9 +45,10 @@
                 $this->bind(':id', $id);
                 $product = $this-> single();
                $session = new SessionUtil();
-            $session->AddOrder($product, $total);
+              $session->AddOrder($product, $total);
           
             }
+
         }
         
     }

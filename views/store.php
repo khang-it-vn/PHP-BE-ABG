@@ -122,7 +122,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><label for="">SOLO WALLET</label></a>
+                        <a href="<?php echo ROOT_URL."store/index"?>"><label for="">SOLO WALLET</label></a>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -138,16 +138,14 @@
                     <div class="header__cart">
                         <ul>
                             <div class="header__top__right__auth">
-                                <a href="./login.html"><i class="fa fa-user"></i> Đăng Nhập</a>
+                                <a href=""><i class="fa fa-user"></i><?php echo SessionUtil::getInfoToken()->fullname . "  "?></a>
                             </div>
-                            <div class="header__top__right__auth">
-                                <a href="./register.html"><i class="fa fa-user"></i> Đăng Kí</a>
-                            </div>
+                            
                             <li><a href="#"><i class="fa fa-shopping-cart" data-toggle="modal"
-                                        data-target="#cartModal"></i> <span>3</span></a></li>
+                                        data-target="#cartModal"></i> <span><?php echo SessionUtil::getTotalQuantity()?></span></a></li>
 
                         </ul>
-                        <div class="header__cart__price">Tổng: <span>000VNĐ</span></div>
+                        <div class="header__cart__price">Tổng: <span><?php echo SessionUtil::getTotal()?>USDT</span></div>
 
                     </div>
                 </div>
@@ -205,7 +203,7 @@
                 <div class="col-lg-5 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo" style=" font-size: 36px;font-weight: bold;">
-                            <a style="color : #9feaff;" href="./index.html"><label for="">SOLO WALLET</label></a>
+                            <a style="color : #9feaff;" href="<?php echo ROOT_URL."store/index"?>"><label for="">SOLO WALLET</label></a>
                         </div>
                         <ul>
                             <li><b>Đ/C:</b> 240 Nguyễn Oanh, Phường 17, Gò Vấp, HCM</li>
@@ -268,7 +266,7 @@
             <div class="modal-content">
                 <div class="modal-header border-bottom-0">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        Your Shopping Cart
+                        Giỏ hàng của bạn
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -281,24 +279,25 @@
                                 <tr>
                                     <th class="shoping__product">
                                         <img src=".../assets/assets_Store/img/nameshop.png" alt="">
-                                        <p>Duong Sport</p>
+                                        <p><?php echo SessionUtil::getInfoToken() ->fullname ?></p>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach($_SESSION['cart'] as $item):?>
                                 <tr>
                                     <td class="shoping__cart__item">
-                                        <img src="https://ict-imgs.vgcloud.vn/2022/03/29/11/phat-trien-them-10-trieu-thue-bao-su-dung-smartphone-nam-2022.JPG"
+                                        <img src="http://localhost:3000/img/<?php echo $item['image']; ?>"
                                             alt="">
-                                        <h5>Apple IPhone 13 (128GB) – Starlight Light Blue</h5>
+                                        <h5><?php echo $item['name']; ?></h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        <p style="text-decoration:line-through"> 110.00</p>
-                                        55.00
+                                        <p style="text-decoration:line-through"></p>
+                                        <?php echo number_format($item['price']);?>
                                         <div class="quantity">
                                             <div class="pro-qty">
                                                 <span class="dec qtybtn">-</span>
-                                                <input type="text" value="1">
+                                                <input type="text" value="<?php echo $item['quantity']; ?>">
                                                 <span class="inc qtybtn">+</span>
                                             </div>
                                         </div>
@@ -307,53 +306,13 @@
                                         <span class="icon_close"></span>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="https://ict-imgs.vgcloud.vn/2022/03/29/11/phat-trien-them-10-trieu-thue-bao-su-dung-smartphone-nam-2022.JPG"
-                                            alt="">
-                                        <h5>Apple IPhone 13 (128GB) – Starlight Light Blue</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        <p style="text-decoration:line-through"> 110.00</p>
-                                        55.00
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <span class="dec qtybtn">-</span>
-                                                <input type="text" value="1">
-                                                <span class="inc qtybtn">+</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="https://ict-imgs.vgcloud.vn/2022/03/29/11/phat-trien-them-10-trieu-thue-bao-su-dung-smartphone-nam-2022.JPG"
-                                            alt="">
-                                        <h5>Apple IPhone 13 (128GB) – Starlight Light Blue</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        <p style="text-decoration:line-through"> 110.00</p>
-                                        55.00
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <span class="dec qtybtn">-</span>
-                                                <input type="text" value="1">
-                                                <span class="inc qtybtn">+</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
+                                <?php endforeach;?>
+                                
                             </tbody>
                         </table>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <h5>Total: <span class="price text-success">89 </span></h5>
+                        <h5>Total: <span class="price text-success"><?php echo SessionUtil::getTotal()?> USDT</span></h5>
                     </div>
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-between">

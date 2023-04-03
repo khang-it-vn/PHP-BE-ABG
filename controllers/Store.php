@@ -20,9 +20,15 @@
 		public function Order()
 		{
 			$model =  new StoreModel();
-			$array = $model->getDetailProduct();
+			$array = $model->getProductById();
 
-			$this->Details();
+			if(isset($_POST['number']))
+			{
+				SessionUtil::AddOrder($array,$_POST['number'] );
+			}
+
+			print_r(SessionUtil::GetOrders());
+			header("Location: ".ROOT_URL."store/details?id=".$_POST["id"]);
 		}
 	}
 ?>
