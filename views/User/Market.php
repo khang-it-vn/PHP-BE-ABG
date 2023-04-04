@@ -106,6 +106,6 @@
 <script>
   setInterval(function(){
     location.reload();
-  }, 4000);
+  }, 700000);
 
 </script>

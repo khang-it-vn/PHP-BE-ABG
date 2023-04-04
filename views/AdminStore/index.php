@@ -26,22 +26,22 @@
 
                                 <?php
                                     // Get current page number from query string
-                                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                                    // $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
-                                    // Get total number of products
-                                    $totalProducts = count($viewModel['ListProduct']);
+                                    // // Get total number of products
+                                    // $totalProducts = count($viewModel['ListProduct']);
 
-                                    // Calculate total number of pages
-                                    $perPage = 10;
-                                    $totalPages = ceil($totalProducts / $perPage);
+                                    // // Calculate total number of pages
+                                    // $perPage = 10;
+                                    // $totalPages = ceil($totalProducts / $perPage);
 
-                                    // Calculate offset for SQL query
-                                    $offset = ($page - 1) * $perPage;
+                                    // // Calculate offset for SQL query
+                                    // $offset = ($page - 1) * $perPage;
 
-                                    // Retrieve products for current page
-                                    // Replace with actual code that retrieves product data from the database
-                                    // and limits the number of rows per page using the LIMIT and OFFSET clauses
-                                    $products = array(); // replace with actual array of products
+                                    // // Retrieve products for current page
+                                    // // Replace with actual code that retrieves product data from the database
+                                    // // and limits the number of rows per page using the LIMIT and OFFSET clauses
+                                    // $products = array(); // replace with actual array of products
 
                                     foreach ($viewModel['ListProduct'] as $item):?>
                                 <tr class="MuiTableRow-root MuiTableRow-hover css-lfnorv">
@@ -76,12 +76,7 @@
                                 </tr>
                                 <?php endforeach; ?>
 
-                                <!-- display pagination links -->
-                                <div>
-                                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                                    <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                                    <?php endfor; ?>
-                                </div>
+                                
 
                             </tbody>
                         </table>
