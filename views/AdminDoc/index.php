@@ -52,13 +52,13 @@
     </div>
     <div class="center">
         <div class="pagination">
-            <a href="#">&laquo;</a>
-            <?php for($i=0; $i<$viewModel["pages"]; $i++) :?>
-                <a href="#"><?php echo $i ?></a>
-            <?php endfor;?>
-            <a href="#">&raquo;</a>
+            
+        // phan trang
+            
         </div>
     </div>
+
+
 
     <style>
     .center {
