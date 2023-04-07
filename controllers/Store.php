@@ -30,5 +30,15 @@
 			print_r(SessionUtil::GetOrders());
 			header("Location: ".ROOT_URL."store/details?id=".$_POST["id"]);
 		}
+
+		public function searchProduct()
+		{
+			$storeModel = new StoreModel();
+			$data = $storeModel -> getProductByKeyWord();
+			$category = $storeModel ->getCategory();
+
+			$dataArray = array("productsFind" => $data, "category" => $category);
+			return $this ->returnViewWithLayout($dataArray,'store.php'); 
+		}
 	}
 ?>
