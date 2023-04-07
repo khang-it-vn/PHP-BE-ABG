@@ -50,6 +50,20 @@
             }
 
         }
+
+        public function getProductByKeyWord()
+        {
+            if(isset($_POST['submit']))
+            {
+                $keyword = $_POST['keyword'];
+
+                $sql = "SELECT * FROM product WHERE name like :keyword;"; // sql injection '%' + keyword + '%' 
+                $this ->query($sql);
+                $this ->bind(":keyword",( '%' . $keyword . '%'));
+                return $this ->resultSet();
+            }
+            
+        }
         
     }
 ?>
