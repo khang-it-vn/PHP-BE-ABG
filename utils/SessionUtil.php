@@ -10,6 +10,7 @@
             $_SESSION['s_token'] = $data;
         }
 
+        // Hàm keierm tra quyền của user
         public static function getRoleRedirect()
         {
             if($_SESSION['s_token']['role'] == ADMIN_DOC)
@@ -24,6 +25,24 @@
             {
                 header("Location: ". ROOT_URL .'User/index');
             }
+        }
+
+        public static function checkRoleAccessDoc($role)
+        {
+            if(SessionUtil::getRole() !== $role)
+            {
+                header('Location: '. ROOT_URL .'user/index');
+            }
+
+        }
+
+        public static function checkRoleAccessStore($role)
+        {
+            if(SessionUtil::getRole() !== $role)
+            {
+                header('Location: '. ROOT_URL .'user/index');
+            }
+
         }
 
         public static function getRole()
