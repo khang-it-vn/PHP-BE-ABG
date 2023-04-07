@@ -53,8 +53,8 @@
     <div class="center">
         <div class="pagination">
             <a href="#">&laquo;</a>
-            <?php for($i=0; $i<$viewModel["pages"]; $i++) :?>
-                <a href="#"><?php echo $i ?></a>
+            <?php for($i=0; $i<$viewModel["pages"]; ) :?>
+                <a href="?page=<?php echo $i ?>"><?php echo ++$i ?></a>
             <?php endfor;?>
             <a href="#">&raquo;</a>
         </div>
