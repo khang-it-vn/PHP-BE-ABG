@@ -9,8 +9,22 @@
 
         public function getProduct()
         {
-            $sql = "SELECT * FROM product";
-            $this ->query($sql);
+            $paramUtil = new ParamUtil();
+            $params = $paramUtil -> GetParamFromUri();
+            
+            $sql = '';
+            if(isset($params['id']))
+            {
+                $sql = "select * from product join category WHERE product.id = category.id and category.id = :id;";
+                $this->query($sql);
+                $this -> bind(":id", $params['id']);
+            }
+            else
+            {
+                $sql = "SELECT * FROM product";
+                $this->query($sql);
+            }
+
             return $this->resultSet();
         }
 
