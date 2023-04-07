@@ -2292,7 +2292,6 @@ ol {
   border-bottom: 1px solid #ebebeb;
 }
 .shoping__cart__table table thead th {
-  display: flex;
   align-items: center;
 }
 .shoping__cart__table table thead th img {

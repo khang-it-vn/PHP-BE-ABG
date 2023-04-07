@@ -274,37 +274,60 @@
                 </div>
                 <div class="modal-body">
                     <div class="shoping__cart__table border p-5">
+                    <img src=".../assets/assets_Store/img/nameshop.png" alt="">
+                                        <p><?php echo SessionUtil::getInfoToken() ->fullname ?></p>
                         <table>
                             <thead>
-                                <tr>
-                                    <th class="shoping__product">
-                                        <img src=".../assets/assets_Store/img/nameshop.png" alt="">
-                                        <p><?php echo SessionUtil::getInfoToken() ->fullname ?></p>
-                                    </th>
-                                </tr>
+                                <th style='display: revert' >
+                                    Hình Ảnh - Tên Sản Phẩm
+                                </th>
+                              
+                                <th class="" style='display: revert'>
+                                    Số lượng hiện tại
+                                </th>
+                                <th class="" style='display: revert'>
+                                    Số lượng muốn đặt thêm
+                                </th>
+                                <th class="" style='display: revert'>
+                                    
+                                </th>
+                                
                             </thead>
                             <tbody>
+                                <!-- Gio hang -->
                                 <?php foreach($_SESSION['cart'] as $item):?>
                                 <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="http://localhost:3000/img/<?php echo $item['image']; ?>"
-                                            alt="">
-                                        <h5><?php echo $item['name']; ?></h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        <p style="text-decoration:line-through"></p>
-                                        <?php echo number_format($item['price']);?>
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <span class="dec qtybtn">-</span>
-                                                <input type="text" value="<?php echo $item['quantity']; ?>">
-                                                <span class="inc qtybtn">+</span>
+                                    <form action="order" method="post">
+                                        <td class="shoping__cart__item">
+                                            <img src="http://localhost:3000/img/<?php echo $item['image']; ?>"
+                                                alt="">
+                                            <h5><?php echo $item['name']; ?></h5>
+                                        </td>
+                                        <input type="number" name='id' value='<?php echo $item['id_product']; ?>' hidden>
+                                        <td class="shoping__cart__price">
+                                            <p style="text-decoration:line-through"></p>
+                                            <?php echo number_format($item['price']);?>
+                                            <div class="quantity">
+                                                <div class="pro-qty">
+                                                    <input type="number" value="<?php echo $item['quantity']; ?>" readonly>  
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
+                                        </td>
+                                        <td class="shoping__cart__price">
+                                            <p style="text-decoration:line-through"></p>
+                                          
+                                            <div class="quantity">
+                                                <div class="pro-qty">
+                                                    <span class="dec qtybtn">-</span>
+                                                    <input type="number" name='number' value="0" min='1' max='100' readonly>
+                                                    <span class="inc qtybtn">+</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="shoping__cart__item__close">
+                                            <button type='submit' class='btn btn-success'>Lưu</button>
+                                        </td>
+                                    </form>
                                 </tr>
                                 <?php endforeach;?>
                                 
