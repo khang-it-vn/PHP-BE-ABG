@@ -38,10 +38,36 @@ class AdminStoreModel extends DbContext
     }
 public function GetData()
 {
-    $sql  = 'SELECT b.id_product, b.name as nameproduct, b.image, b.description, b.price, c.id, c.name FROM product b JOIN category c ON b.id = c.id';
-    $this->query($sql);
-    return $this->resultSet();
+    // $sql  = 'SELECT b.id_product, b.name as nameproduct, b.image, b.description, b.price, c.id, c.name FROM product b JOIN category c ON b.id = c.id';
+    // $this->query($sql);
+    // return $this->resultSet();
+    $paramUtil = new ParamUtil();
+            $params = $paramUtil -> GetParamFromUri();
+
+            $page = 0;
+
+            if(isset($params['page']))
+            {
+                $page = $params['page'];
+            }
+
+            $offset = $page * 8;
+    $sql  = 'SELECT b.id_product, b.name as nameproduct, b.image, b.description, b.price, c.id, c.name FROM product b JOIN category c ON b.id = c.id LIMIT 8 OFFSET :offset';
+    $this -> query($sql);
+            $this ->bind(":offset", $offset);
+
+            return $this -> resultSet();
+    
 }
+
+public function count()
+        {
+            $sql = "SELECT count(*) as total FROM product";
+            $this -> query($sql);
+            $page = $this -> single()["total"]/10+1;
+            return $page;
+        }
+
     public function Add()
     {
         if(isset($_POST['submit']))
@@ -78,7 +104,7 @@ public function GetData()
     public function Delete()
         {
             $para = new ParamUtil();
-           $array =  $para->GetParamFromUri(); 
+            $array =  $para->GetParamFromUri(); 
             $id =  $array['id'];
             $sql = 'DELETE FROM product WHERE id_product = :id';
             $this ->query($sql);
@@ -87,3 +113,4 @@ public function GetData()
         }
 
 }
+?>
