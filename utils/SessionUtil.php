@@ -10,7 +10,7 @@
             $_SESSION['s_token'] = $data;
         }
 
-        public function getInfo()
+        public static function getInfo()
         {
 
             $url = E_GET_INFO;
@@ -49,7 +49,7 @@
             else
             {
                 // checkmpass
-	        	$status = $this->getInfo();
+	        	$status = SessionUtil::getInfo();
                 if($status === false)
                 {
                     header("Location: ".ROOT_URL."user/updatempass");
