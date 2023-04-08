@@ -6,7 +6,7 @@
             $adminStoreModel = new AdminStoreModel;
             
             
-            $array = array('ListProduct'=>$adminStoreModel -> GetData());
+            $array = array('ListProduct'=>$adminStoreModel -> GetData(), "pages" => $adminStoreModel -> count());
             return $this -> returnViewWithLayout($array, 'admin_store.php');
 
         }
