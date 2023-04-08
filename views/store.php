@@ -326,6 +326,7 @@
                                         </td>
                                         <td class="shoping__cart__item__close">
                                             <button type='submit' class='btn btn-success'>Lưu</button>
+                                            <button  class='btn btn-danger'><a href="DeleteOrder?id=<?php echo $item['id_product']?>">Xóa</a></button>
                                         </td>
                                     </form>
                                 </tr>

@@ -31,6 +31,17 @@
 			header("Location: ".ROOT_URL."store/details?id=".$_POST["id"]);
 		}
 
+		public function DeleteOrder()
+		{
+			$model =  new StoreModel();
+			$array = $model->getProductByIdGet();
+			if($array)
+			{
+				SessionUtil::DeleteOrder($array );
+			}
+			header("Location: ".ROOT_URL."store/index");
+		}
+
 		public function searchProduct()
 		{
 			$storeModel = new StoreModel();

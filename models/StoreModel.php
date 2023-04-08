@@ -78,6 +78,17 @@
             }
             
         }
+
+        public function getProductByIdGet()
+        {
+            $para = new ParamUtil();
+            $array =  $para->GetParamFromUri(); 
+            $id =  $array['id'];
+            $sql = "SELECT * FROM product WHERE id_product = :id";
+            $this->query($sql);
+            $this->bind(':id', $id);
+            return $this-> single();
+        }
         
     }
 ?>

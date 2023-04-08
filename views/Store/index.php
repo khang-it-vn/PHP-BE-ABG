@@ -78,7 +78,7 @@
                             <li data-mixitup-control data-filter=".Apple-watch">Price ascending</li>
                         </ul>
                     </div>
-                    <!--  -->
+                    <!-- -->
                             <?php
                                 $total = count($viewModel['product']);
                                 $line = $total / 4;

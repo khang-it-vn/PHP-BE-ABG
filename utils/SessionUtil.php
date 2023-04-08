@@ -153,4 +153,18 @@
         {
            return $_SESSION['cart'];
         }
+
+        public static function DeleteOrder($product) {
+
+            // Lặp qua từng sản phẩm trong giỏ hàng và xóa nếu tồn tại
+            foreach ($_SESSION['cart'] as $key => &$item) {
+                if ($item['id_product'] === $product['id_product']) {
+                    
+                unset($_SESSION['cart'][$key]);
+                break;
+                    
+                    
+                }
+            }
+        }
     }
