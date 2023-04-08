@@ -55,5 +55,16 @@
             $page = $this -> single()["total"]/10+1;
             return $page;
         }
+
+        public function Delete()
+        {
+            $para = new ParamUtil();
+            $array =  $para->GetParamFromUri(); 
+            $id =  $array['id'];
+            $sql = 'DELETE FROM doc WHERE id_doc = :id';
+            $this ->query($sql);
+            $this->bind(':id', $id);
+            $tatusCode = $this->execute();
+        }
     }
 ?>

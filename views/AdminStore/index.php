@@ -53,7 +53,7 @@
                                         </div>
                                     </td>
                                     <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
-                                        <img style="weight: 50px; height:50px"
+                                        <img style="width: 50px; height:50px"
                                             src="http://localhost:3000/img/<?php echo $item['image']; ?>" alt="">
                                     </td>
                                     <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">

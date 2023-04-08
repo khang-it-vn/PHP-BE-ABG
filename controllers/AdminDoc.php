@@ -3,7 +3,7 @@
         
         public function Index()
         {
-            SessionUtil::checkRoleAccessDoc(ADMIN_DOC);
+            //SessionUtil::checkRoleAccessDoc(ADMIN_DOC);
             $adminModel = new AdminDocModel();
             $array = array("docs" => $adminModel -> GetData(), "pages" => $adminModel -> count()); 
         
@@ -14,10 +14,18 @@
         public function Add()
         {
             
-            SessionUtil::checkRoleAccessDoc(ADMIN_DOC);
+            //SessionUtil::checkRoleAccessDoc(ADMIN_DOC);
             $adminModel = new AdminDocModel();
             $adminModel -> Add();
             return $this -> returnViewWithLayout(null,'admin_doc.php');
+        }
+
+        public function Delete ()
+        {
+            //SessionUtil::checkRoleAccessDoc(ADMIN_DOC);
+            $adminModel = new AdminDocModel;
+            $adminModel -> Delete();
+            header('Location: ' .ROOT_URL.'adminDoc/Index');
         }
     }
 ?>

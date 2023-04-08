@@ -32,7 +32,10 @@
                                     <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
                                         <div
                                             class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorError MuiChip-filledError css-ccsiwf">
-                                            <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">Delete</span>
+                                            <!-- <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">Delete</span> -->
+                                            <a style="color:white"
+                                                class="MuiChip-label MuiChip-labelMedium css-14vsv3w"
+                                                href= "<?php echo ROOT_URL.'adminDoc/Delete?id='.$element['id_doc']?>">Delete</a>
                                         </div>
                                         <div
                                             class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorPrimary MuiChip-filledPrimary css-lvr0df">
