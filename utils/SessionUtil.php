@@ -10,6 +10,31 @@
             $_SESSION['s_token'] = $data;
         }
 
+        public function getInfo()
+        {
+
+            $url = E_GET_INFO;
+            $token = SessionUtil::getToken();
+
+
+            $options = array(
+                'http' => array(
+                    'method'  => 'GET',
+                    'header'  => 'Authorization: Bearer ' . $token . "\r\n" .
+                        'Content-Type: application/json'
+                )
+            );
+
+            $context = stream_context_create($options);
+            $response = file_get_contents($url, false, $context);
+            $response =	json_decode($response);
+
+            SessionUtil::setInfoToken($response[0]);
+            if(strlen($response[0] -> mpass) === 0)
+            {
+                return false;
+            }
+        }
         // Hàm keierm tra quyền của user
         public static function getRoleRedirect()
         {
@@ -23,6 +48,13 @@
             }
             else
             {
+                // checkmpass
+	        	$status = $this->getInfo();
+                if($status === false)
+                {
+                    header("Location: ".ROOT_URL."user/updatempass");
+                    return;
+                }
                 header("Location: ". ROOT_URL .'User/index');
             }
         }

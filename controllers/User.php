@@ -66,18 +66,13 @@ class User extends Controller
 		// detech token and role from response
 		SessionUtil::createSessionWithTokenRole($response[1]['token'], $response[2]['roles']['from']);
 		
-		// checkmpass
-		$status = $this->getInfo();
-
-		// mpass is null redirect view set product
-		if($status === false)
-		{
-			header("Location: ".ROOT_URL."user/updatempass");
-			return;
-		}
 
 		// check role and redirect to access page
 		SessionUtil::getRoleRedirect();
+		// mpass is null redirect view set product
+		
+
+		
 	}
 
 
