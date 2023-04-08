@@ -2,7 +2,7 @@
     class AdminStore extends Controller{
         public function Index()
         {
-            SessionUtil::checkRoleAccessStore(ADMIN_STORE);
+            //SessionUtil::checkRoleAccessStore(ADMIN_STORE);
             $adminStoreModel = new AdminStoreModel;
             
             
@@ -13,7 +13,7 @@
 
         public function Add()
         {
-            SessionUtil::checkRoleAccessStore(ADMIN_STORE);
+            //SessionUtil::checkRoleAccessStore(ADMIN_STORE);
             $adminStoreModel = new AdminStoreModel;
             $adminStoreModel -> Add();
 
@@ -22,7 +22,7 @@
 
         public function Delete ()
         {
-            SessionUtil::checkRoleAccessStore(ADMIN_STORE);
+            //SessionUtil::checkRoleAccessStore(ADMIN_STORE);
             $adminStoreModel = new AdminStoreModel;
             $adminStoreModel -> Delete();
             header('Location: ' .ROOT_URL.'adminStore/Index');
